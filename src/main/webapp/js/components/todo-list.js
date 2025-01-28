@@ -24,12 +24,6 @@ export class TodoList extends HTMLElement {
 
 	#renderTodos(todos) {
 		let list = this.querySelector('#list');
-		if (todos.length === 0)
-			list.innerHTML = 'Nothing to do!';
-		else todos.forEach(todo => {
-			let item = new TodoItem();
-			item.setAttribute('id', todo.id);
-			list.append(item);
-		});
+		list.innerHTML = todos.length === 0  ? 'Nothing to do!' : todos.map(todo => `<todo-item id="${todo.id}"></todo-item>`).join('');
 	}
 }

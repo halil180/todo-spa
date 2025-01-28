@@ -26,4 +26,5 @@ export class TodoList extends HTMLElement {
 		let list = this.querySelector('#list');
 		list.innerHTML = todos.length === 0  ? 'Nothing to do!' : todos.map(todo => `<todo-item id="${todo.id}"></todo-item>`).join('');
 	}
+
 }
